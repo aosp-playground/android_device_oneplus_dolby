@@ -8,7 +8,12 @@ $(call inherit-product, vendor/oneplus/dolby/dolby-vendor.mk)
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(LOCAL_PATH)/configs/hidl/dolby_framework_matrix.xml
+ODM_MANIFEST_FILES += $(LOCAL_PATH)/configs/hidl/c2_manifest.xml
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+
+# Media
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media/media_codecs_c2_dolby_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2_dolby_audio.xml
